@@ -40,8 +40,8 @@ target_link_libraries(fdeep INTERFACE Eigen3::Eigen)
 
 hunter_add_package(nlohmann_json) # default noop
 find_package(nlohmann_json CONFIG REQUIRED)
-target_link_libraries(fdeep INTERFACE nlohmann_json)
-
+#target_link_libraries(fdeep INTERFACE nlohmann_json)
+target_link_libraries(fdeep INTERFACE nlohmann_json::nlohmann_json)
 if(FDEEP_BUILD_UNITTEST)
     enable_testing()
     subdirs(test)
